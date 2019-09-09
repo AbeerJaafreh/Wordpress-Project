@@ -1,0 +1,20 @@
+2019-09-08T11:28:06+00:00 CRITICAL Uncaught Error: Class 'DOMDocument' not found in /var/www/html/wordpress/wp-content/themes/percon/inc/customizer/sanitize-callback.php:440
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/themes/percon/inc/customizer/sanitize-callback.php(432): percon_fource_balance_tag('\t\t\t\t\t\t\t\t')
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(286): percon_customizer_repeater_sanitize('[{"icon_value":...', Object(WP_Customize_Setting))
+#2 /var/www/html/wordpress/wp-includes/plugin.php(208): WP_Hook->apply_filters('[{"icon_value":...', Array)
+#3 /var/www/html/wordpress/wp-includes/class-wp-customize-setting.php(559): apply_filters('customize_sanit...', '[{"icon_value":...', Object(WP_Customize_Setting))
+#4 /var/www/html/wordpress/wp-includes/class-wp-customize-manager.php(2311): WP_Customize_Setting->sanitize('[{"icon_value":...')
+#5 /var/www/html/wordpress/wp-includes/class-wp-customize-manager.php(2719): WP_Customize_Manager->validate_setting_values(Array, Array)
+#6 /var/www/html/wordpress/wp-includes/cl in /var/www/html/wordpress/wp-content/themes/percon/inc/customizer/sanitize-callback.php on line 440
+
+2019-09-08T11:28:27+00:00 CRITICAL Uncaught Error: Class 'DOMDocument' not found in /var/www/html/wordpress/wp-content/themes/percon/inc/customizer/sanitize-callback.php:440
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/themes/percon/inc/customizer/sanitize-callback.php(432): percon_fource_balance_tag('\t\t\tfacebook\t\t\t\t...')
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(286): percon_customizer_repeater_sanitize('[{"icon_value":...', Object(WP_Customize_Setting))
+#2 /var/www/html/wordpress/wp-includes/plugin.php(208): WP_Hook->apply_filters('[{"icon_value":...', Array)
+#3 /var/www/html/wordpress/wp-includes/class-wp-customize-setting.php(559): apply_filters('customize_sanit...', '[{"icon_value":...', Object(WP_Customize_Setting))
+#4 /var/www/html/wordpress/wp-includes/class-wp-customize-manager.php(1783): WP_Customize_Setting->sanitize('[{"icon_value":...')
+#5 /var/www/html/wordpress/wp-includes/class-wp-customize-setting.php(538): WP_Customize_Manager->post_value(Object(WP_Customize_Setting), Object(stdClass))
+#6 /var/www/ in /var/www/html/wordpress/wp-content/themes/percon/inc/customizer/sanitize-callback.php on line 440
+

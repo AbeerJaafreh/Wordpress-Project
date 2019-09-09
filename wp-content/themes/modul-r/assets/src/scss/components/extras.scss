@@ -1,0 +1,223 @@
+// Metas
+
+.entry-footer {
+  clear: both;
+  & > div {
+    padding-top: $size__padding;
+  }
+}
+
+.page-links {
+  clear: both;
+  padding-top: $size__padding;
+}
+
+.post-meta {
+  
+  .meta-wrapper {
+    padding-top: $size__margin * 2;
+    display: inline-flex;
+    
+    p {
+      color: $color__text;
+      font-size: $text__size - 2;
+      font-weight: 300;
+      margin-left: $size__margin * 4;
+      margin-bottom: 0;
+    
+      &:first-child { margin-left: 0 }
+      
+      @media #{$mq__smaller-than-tablet} {
+        margin-left: $size__margin;
+        font-size: 13px;
+      }
+    }
+    
+    a {
+      color: $color__text;
+      font-weight: 400;
+      text-align: center;
+      min-width: 100px;
+      display: block;
+    }
+  }
+}
+
+.breadcrumbs {
+  font-size: $text__size - 2;
+  padding-bottom: $size__margin * 2 ;
+  a {
+    opacity: 0.8;
+    font-weight: 600;
+    &:last-of-type {
+      color: $color__text;
+      font-weight: 400;
+    }
+  }
+}
+
+
+
+
+.relateds {
+  $image-size: 150px;
+  
+  ul.relateds-list {
+    margin: 0;
+    padding: 0;
+    
+    li {
+      display: block;
+      padding: 0;
+      margin: $size__margin 0 ($size__padding * .75);
+      clear: both;
+      font-weight: 400;
+    
+      p {
+        margin: 0;
+        font-size: .9em;
+        font-weight: 400;
+      }
+    
+      img {
+        float: left;
+        clear: both;
+        width: $image-size;
+        margin-right: $size__padding-resp;
+        margin-bottom: $size__padding-resp;
+        max-height: $image-size;
+        @media #{$mq__smaller-than-tablet} {
+          width:  $image-size * .5;
+          margin-right: $size__padding-resp * .5;
+          margin-bottom: $size__padding-resp * .5;
+        }
+      }
+    }
+  }
+}
+
+// Post Navigation
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  
+  a {
+    line-height: 1.2;
+    font-weight: 500;
+    display: inline-table;
+    vertical-align: baseline;
+    width: calc(100% - 30px);
+    @media #{$mq__smaller-than-tablet} {
+      font-size: 90%;
+    }
+  }
+  
+  > * {
+    flex-basis: 50%;
+    flex-shrink: 0;
+  }
+  
+  .alignright {
+    text-align: right;
+  }
+  
+}
+
+// the archive navigation
+.nav-links {
+  flex-basis: 100%;
+  text-align: center;
+  
+  * {
+    margin: 0 $size__margin;
+  }
+  
+  .page-numbers {
+    $pagenumber__size: 36px;
+    
+    display: inline-block;
+    padding: 0 ($pagenumber__size * .20);
+    width: $pagenumber__size;
+    height: $pagenumber__size;
+    vertical-align: middle;
+    box-sizing: border-box;
+    
+    font-weight: 600;
+    line-height: $pagenumber__size;
+    
+    border-radius: $pagenumber__size * .5;
+    background-color: $color__light-grey;
+    color: darken($color__light-grey, 20%);
+    transition: $animations__lenght;
+    
+    &.current {color: $color__dark-grey;}
+    &:hover {color: $color__primary;}
+    
+    &.next,
+    &.prev {
+      width: auto;
+    }
+    
+  }
+}
+
+.post-navigation {
+  .navigation {
+    margin-top: $size__margin * 2;
+    & > div {
+      height: 60px;
+    }
+    i {vertical-align: middle;}
+  }
+}
+
+.category-list-labels {
+  padding-top: $size__padding * .5;
+  ul, li {
+    display: inline-block;
+  }
+  
+  li {
+    background: $color__white;
+    border-radius: 15px;
+    border: 1px solid $color__light-grey;
+    width: auto;
+    height: 30px;
+    line-height: 26px;
+    position: relative;
+    margin: 0 10px 10px 0;
+    padding: 0 10px;
+    box-sizing: border-box;
+  
+    a {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: $color__secondary;
+      text-decoration: none !important;
+    }
+  
+    a {
+      transition: 0.2s;
+    }
+  
+    &:hover {
+      a {
+        filter: brightness(115%);
+      }
+    }
+  }
+}
+
+// Extra
+.wp-block-separator,
+hr {
+  border: none;
+  border-bottom: 1px solid transparentize($color__secondary, .6);
+}
+
+.sticky {
+  background-color: transparent;
+  h1, h2 { color: $color__primary;}
+}

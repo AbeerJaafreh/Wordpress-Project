@@ -1,0 +1,142 @@
+iframe {
+	width: 100%;
+	max-width: 100%;
+}
+
+::selection {
+	background-color: transparentize($color__primary, 0.5) !important;
+	color: white;
+}
+
+pre {
+	width: 100%;
+	padding: ($size__padding * .5)  $size__padding;
+	background: lighten($color__light-grey, 5%);
+	border: 1px solid $color__light-grey;
+	white-space: pre-wrap;
+  box-sizing: border-box;
+}
+
+blockquote {
+	min-height: 100px;
+	padding-top: ($blockquote__icon-size * .5);
+	padding-bottom: ($blockquote__icon-size * .5);
+	padding-left: $blockquote__icon-size * 1.5 !important;
+	padding-right: $blockquote__icon-size * 1.5 !important;
+	margin: ($size__margin * 4) 0;
+	position:relative;
+	background: white;
+	border: 1px solid $color__light-grey;
+	
+	p {
+		margin-bottom: $size__margin * 3;
+	}
+	
+	&:before {
+		font-family: 'Material Icons';
+		content: "\E244";
+		position: absolute;
+		top: -4px;
+		left: 16px;
+		font-size: $blockquote__icon-size;
+		color: $color__primary;
+	}
+}
+
+code {
+	background-color: $color__light-grey;
+	padding: 4px 6px;
+	font-weight: 600;
+}
+
+@media #{$mq__content-width} {
+	.site-main .entry-content {
+		table,
+		pre,
+		blockquote {
+			padding-left: $size__padding-resp;
+			padding-right: $size__padding-resp;
+		}
+		
+		table {
+			width: calc(100% - #{$size__padding-resp * 2});
+		}
+	}
+}
+
+// Tags arrowed style
+.post-tags {
+	list-style: none;
+	
+	h3 {
+		display: inline;
+		vertical-align: middle;
+	}
+	
+	ul {
+		display: inline;
+		margin: 0;
+		padding-left: $size__margin * 2.5;
+	}
+	
+	li.post-tag {
+		margin: 0 10px 10px 0;
+		padding: 0 20px 0 25px;
+	}
+}
+
+.post-tag {
+	background: $color__secondary;
+	border-radius: 3px 0 0 3px;
+	display: inline-block;
+	height: 22px;
+	line-height: 18px;
+	position: relative;
+	
+	a {
+		font-size: 11px;
+		font-weight: 600;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		color: $color__white;
+		text-decoration: none !important;
+	}
+	
+	&, &::before, &::after, a {
+		transition: 0.2s;
+	}
+	
+	&::before {
+		background: #fff;
+		border-radius: 10px;
+		box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+		content: '';
+		height: 6px;
+		left: 10px;
+		position: absolute;
+		width: 6px;
+		top: 8px;
+	}
+	
+	&::after {
+		background: #fff;
+		border-bottom: 11px solid transparent;
+		border-left: 10px solid $color__secondary;
+		border-top: 11px solid transparent;
+		content: '';
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	
+	&:hover {
+		background-color: $color__secondary;
+		a {
+			color: white;
+		}
+	}
+	
+	&:hover::after {
+		border-left-color: $color__secondary;
+	}
+}

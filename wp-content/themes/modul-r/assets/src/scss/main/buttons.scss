@@ -1,0 +1,76 @@
+$button__height: 36px;
+
+%button {
+  display: inline-flex;
+  justify-content: center;
+  position: relative;
+  
+  transition: 150ms;
+  cursor: pointer;
+  
+  min-width: 64px;
+  margin: 0;
+  padding: ($size__margin * 1.5) ($size__margin * 3);
+  
+  border: none;
+  border-radius: 30px;
+  outline: none;
+  
+  font-family: $font__family;
+  font-size: $text__size + 2;
+  font-weight: 700;
+  text-decoration: none !important;
+  white-space: normal;
+  overflow-wrap: break-word;
+  
+  &:not(.has-background) {
+    background-color: $color__white;
+    color: $color__accent;
+  }
+
+  &:not(.has-text-color) {
+    background: $color__accent;
+    color: $color__white;
+  }
+  
+  &:hover {
+    color: $color__white;
+    filter: brightness(115%);
+    cursor: pointer;
+  }
+  
+  &:focus {
+    color: $color__white;
+    filter: brightness(120%);
+  }
+  
+  &.outline {
+    background: transparent !important;
+    border: 2px solid $color__white;
+  }
+}
+
+
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+button,
+.button {
+  @extend %button;
+  
+  background: $color__accent;
+  color: $color__white;
+  
+  & + & {
+    margin-left: $size__margin * 1.5;
+  }
+}
+
+.button {
+  
+  line-height: 1;
+  
+  & + & {
+    margin-right: $size__margin;
+  }
+}

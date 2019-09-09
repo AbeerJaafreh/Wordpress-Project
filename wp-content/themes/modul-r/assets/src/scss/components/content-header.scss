@@ -1,0 +1,41 @@
+// Pages Header
+.entry-header {
+  text-align: center;
+  
+  .meta-wrapper {
+    float: inherit;
+  }
+}
+
+.page-header,
+.entry-header,
+.woocommerce-products-header {
+  display: block;
+  width: 100%;
+  max-width: $size__site-width;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  
+  @media #{$mq__content-width} {
+    max-width: 100%;
+    width: auto;
+    padding-left: $size__padding-resp;
+    padding-right: $size__padding-resp;
+  }
+  
+  p {
+    margin: 0 auto;
+    max-width: $size__site-width * .5;
+  }
+}
+
+.page-title,
+.entry-title {
+  margin: 0 auto ($size__margin * 2);
+  text-align: center;
+  font-size: 64px;
+  width: 75%;
+  @media #{$mq__smaller-than-tablet} {font-size: 52px;}
+  @media #{$mq__phablet} {font-size: 42px;}
+}

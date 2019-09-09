@@ -1,0 +1,58 @@
+body.woocommerce {
+  
+  // the ui
+  .woocommerce-breadcrumb {
+    margin: 0;
+    line-height: 1;
+    padding-bottom: $size__margin * 4;
+    @extend .ellipsis;
+    @media #{$mq__smaller-than-tablet} {padding-bottom: $size__margin * 2;}
+  }
+  
+  .woocommerce-result-count {
+    line-height: $size__padding * .75;
+    @media #{$mq__smaller-than-tablet} {font-size: $text__size - 4}
+  }
+  .woocommerce-ordering {
+    a, span, option, select {
+      @media #{$mq__smaller-than-tablet} {font-size: $text__size - 4}
+    }
+  }
+  
+  .product_meta {
+    margin-top: $size__margin * 2;
+    & > span {
+      display: block;
+      font-weight: 600;
+      span, a {font-weight: 400;}
+    }
+  }
+  
+  // product lightbox background reset
+  .pswp__button {background: transparent;}
+  
+}
+
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt {
+  background-color: $color__woo-accent;
+  &:hover { background-color: lighten($color__woo-accent, 5%);}
+}
+
+.woocommerce button.button.alt.disabled {
+  background-color: lighten($color__dark-grey, 10%);
+  &:hover {
+    background-color: $color__dark-grey;
+  }
+}
+
+// Select2 custom style
+.select2-selection__rendered {
+  line-height: $size__padding * .75 !important;
+}
+.select2-container .select2-selection--single,
+.select2-selection__arrow {
+  height: $size__padding * .75 !important;
+}

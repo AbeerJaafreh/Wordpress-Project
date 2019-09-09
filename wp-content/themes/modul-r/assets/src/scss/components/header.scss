@@ -1,0 +1,194 @@
+#masthead {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+  background-color: $color__nav-background;
+  transition: $animations__lenght;
+  
+  @media #{$mq__smaller-than-tablet} {
+    height: $head__height-responsive;
+    transform: inherit !important;
+    padding: 0;
+  }
+  
+  .has-featured-image.top & {
+    background-color: transparentize($color__nav-background, 0.2);
+  }
+
+  .scrolled & {
+    box-shadow: 0 3px 8px -4px  transparentize($color__black, 0.5);
+    
+    @if($head__direction == column) {
+      transform: translateY(-#{$size__branding-height + $size__margin});
+    }
+  }
+  
+  .site-header-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    opacity: 0.1;
+  }
+  
+  // the container of the logo/site title
+  .site-branding-container {
+    display: flex;
+    flex-direction: $head__direction;
+    justify-content: space-between;
+    margin-top: 0;
+    margin-bottom: 0;
+  
+    @media #{$mq__smaller-than-tablet} {
+      height: 100%;
+    }
+
+    .site-branding {
+      width: 100%;
+      padding-top: $size__margin;
+      
+      @if($head__direction == row) {
+        padding-bottom: $size__margin;
+        @media #{$mq__smaller-than-tablet} {
+          padding-top: $size__margin * .5;
+          padding-bottom: $size__margin * .5;
+        }
+      }
+      
+      @if($head__direction == column) {
+        height: $size__branding-height;
+        @media #{$mq__smaller-than-tablet} {
+          height: $size__branding-height - ($size__margin * .5);
+          padding-top: 0;
+        }
+
+        .header-text {
+          justify-content: center;
+          text-align: center;
+          @media #{$mq__smaller-than-tablet} {
+            justify-content: flex-start;
+            text-align: left;
+          }
+        }
+      }
+      
+      &.has-header-text.has-custom-logo {
+        display: flex;
+        flex-direction: row;
+        @if($head__direction == row) {
+          justify-content: flex-start;
+        }
+        @if($head__direction == column) {
+          justify-content: center;
+        }
+        .header-text {
+          text-align: left;
+        }
+    
+        .site-logo {
+          margin-right: $size__margin * 2;
+      
+          @media #{$mq__phablet} {
+            width:auto;
+            text-align: center;
+          }
+        }
+      }
+      
+      .header-text {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        @media #{$mq__smaller-than-tablet} {
+          justify-content: center;
+        }
+      }
+  
+      @media #{$mq__smaller-than-tablet} {
+        text-align: left;
+        width: calc(100% - #{$hamburger__size * 1.5} )
+      }
+      
+    }
+    
+    // Site title & description (no custom logo)
+    .site-title,
+    .site-description {
+      @if ($head__direction == row) {
+        display: inline-block;
+      }
+      margin: 0;
+      line-height: 1.05;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    
+    .site-title {
+      font-size: 26px;
+    }
+
+    .site-description {
+      display: inline-block;
+      color: white;
+      font-weight: 300;
+      font-size: 11px;
+    }
+  
+    // Custom logo
+    .has-custom-logo .site-logo {
+      height: 100%;
+      box-sizing: content-box;
+  
+      @media #{$mq__smaller-than-tablet} {
+        height: 100%;
+        max-width: 60%;
+      }
+    }
+    
+    .custom-logo-link {
+      display: flex;
+      height: 100%;
+      align-items: center;
+    }
+
+    .custom-logo {
+      object-fit: contain;
+      width: auto;
+      height: $size__branding-logo-ratio;
+  
+      @if($head__direction == row) {
+        object-position: left;
+      } @elseif($head__direction == column) {
+        align-self: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      @media #{$mq__smaller-than-tablet} {
+        max-height: $head__height-responsive - ($size__margin * 2);
+        object-position: left;
+        margin: 0;
+      }
+    }
+    
+  }
+}
+
+
+// the wordpress admin bar fix
+@media screen and (max-width: 600px) {
+ body.logged-in > div:last-child {
+   position: fixed !important;
+ }
+}
+
+.admin-bar #masthead {
+  top: 32px;
+  @media screen and (max-width: 782px) { top: 46px; }
+}
+
+body.woocommerce .site-content {
+  margin-top: 0;
+}

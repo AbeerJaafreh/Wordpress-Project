@@ -1,0 +1,55 @@
+img {
+  height: auto;
+  max-width: 100%;
+  position: relative;
+  object-fit: cover;
+}
+
+p img {
+  &.alignleft {
+    padding-right: $size__padding-resp * .5;
+  }
+  
+  &.alignright {
+    padding-left: $size__padding-resp * .5;
+  }
+}
+
+figure {
+  margin-bottom: $size__margin * 2;
+  
+  img {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .gallery-caption,
+  figcaption {
+    overflow: hidden;
+    line-height: 1.2;
+  }
+}
+
+
+.site-main .entry-content{
+  .wp-caption {
+    margin-bottom: $size__margin * 2;
+    padding-left: $size__padding-resp;
+    padding-right: $size__padding-resp;
+    
+    .wp-caption-text {
+      color: $color__text;
+      font-size: $text__size - 2;
+      font-style: italic;
+    }
+    
+    &.alignleft {
+      padding-right: $size__padding-resp * .5;
+    }
+    
+    &.alignright {
+      padding-left: $size__padding-resp * .5;
+    }
+  }
+}
